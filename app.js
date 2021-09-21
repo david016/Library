@@ -15,22 +15,15 @@ function Book(title, author, pages, status = "Read") {
     this.pages = pages
     this.status = status
 }
-// make function on prototype that changes status
-Book.prototype.change_status = function () {
-    console.log(this.status)
-}
 
 let lotr = new Book("Lord of the rings", "J.R.R.Tolkien", 400)
 let my_library = [lotr]
-
-// lotr.change_status()
 
 
 let create_book_div = function (title, author, pages, status = "Read") {
     let new_book_div = document.createElement("div")
     new_book_div.classList.add("book")
-    // new_book_div.setAttribute("data-name",title)
-    // console.log(new_book_div.getAttribute("data-name"))
+
 
     let book_info_template_div = document.createElement("div")
     book_info_template_div.classList.add("book_info_template")

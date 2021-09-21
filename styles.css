@@ -27,23 +27,31 @@ main {
   align-items: center;
 }
 
+.books {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .book {
-  margin-top: 15px;
-  margin-bottom: 35px;
+  margin: 15px;
   border: 3px solid black;
-  width: 90vw;
+  width: auto;
   height: 155px;
   display: grid;
-  grid-template-columns: 90px auto 90px;
+  grid-template-columns: 90px 120px 90px;
   align-items: center;
-  /* background-color: #a1a8f7; */
   background-color: grey;
+}
+@media screen and (min-width: 1122px) {
+  .books {
+    justify-content: flex-start;
+  }
 }
 
 .book_info_template,
 .book_info {
   height: 150px;
-  /* border-right: 1px solid black; */
 }
 
 .book_info_template {
@@ -56,7 +64,6 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* border-left: 1px solid black; */
 }
 
 button.delete,
