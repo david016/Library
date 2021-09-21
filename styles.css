@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LAYOUT */
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.navbar {
+  margin-top: 20px;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.book {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  border: 3px solid black;
+  width: 90vw;
+  height: 155px;
+  display: grid;
+  grid-template-columns: 90px auto 90px;
+  align-items: center;
+  /* background-color: #a1a8f7; */
+  background-color: grey;
+}
+
+.book_info_template,
+.book_info {
+  height: 150px;
+  /* border-right: 1px solid black; */
+}
+
+.book_info_template {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.card_third_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* border-left: 1px solid black; */
+}
+
+button.delete,
+button.change_status {
+  height: 40px;
+  width: 60px;
+  margin-bottom: 10px;
+}
+button.delete {
+  background-color: red;
+  color: white;
+}
+button.change_status {
+  background-color: #fab06b;
+}
+
+div.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.book_form {
+  background-color: #9ba3ff;
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 20px;
+  width: 80%;
+  height: 350px;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+  height: 30px;
+}
+
+button.add {
+  margin-bottom: 35px;
+  background-color: #fab06b;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+}
+.book_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.book_submit {
+  background-color: #fffd9b;
+  width: 90px;
+  height: 50px;
+}
+.book_cancel {
+  background-color: #ff9b9e;
+  width: 90px;
+  height: 50px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+  padding-left: 10px;
+}
+#status {
+  color: green;
+  font-weight: bold;
+}
