@@ -6,19 +6,16 @@ let book_submit = document.querySelector(".book_submit")
 let book_cancel = document.querySelector(".book_cancel")
 let book_form = document.querySelector(".book_form")
 let div_form = document.querySelector(".form")
-let h1 = document.querySelector("h1")
-
 
 function Book(title, author, pages, status = "Read") {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.status = status
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
 }
 
-let lotr = new Book("Lord of the rings", "J.R.R.Tolkien", 400)
-let my_library = [lotr]
 
+let my_library = []
 
 let create_book_div = function (title, author, pages, status = "Read") {
     let new_book_div = document.createElement("div")
@@ -69,10 +66,10 @@ let create_book_div = function (title, author, pages, status = "Read") {
         console.log(li_status.innerText)
         if (li_status.innerText == "Read") {
             li_status.innerText = "Not read"
-            li_status.style.color = "red"
+            li_status.style.color = "#b34747"
         } else {
             li_status.innerText = "Read"
-            li_status.style.color = "green"
+            li_status.style.color = "#7acccc"
         }
     })
     card_third_column.appendChild(button_delete)
@@ -100,7 +97,8 @@ book_cancel.addEventListener("click", () => {
 
 let counter_of_books = 0
 
-book_submit.addEventListener("click", () => {
+book_submit.addEventListener("click", (e) => {
+    e.preventDefault()
     counter_of_books++
     div_form.style.display = "none"
     container.style.opacity = 1;

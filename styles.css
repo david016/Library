@@ -4,27 +4,59 @@
   box-sizing: border-box;
 }
 
+/* Variables */
+body {
+  /* Colors */
+  --bg-color: #cc7a7a;
+  --text-color: white;
+  --book-card-color: white;
+
+  --cancel-btns: #b34747;
+  --submit-btns: #7acccc;
+}
+
 /* LAYOUT */
 
 .container {
-  width: 90vw;
+  /* width: 90vw; */
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.navbar {
-  margin-top: 20px;
+header {
+  /* margin-top: 20px; */
   text-align: center;
   height: 90px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 90vw;
+  min-height: calc(100vh - 90px - 45px);
+  height: auto;
   margin: 0 auto;
   align-items: center;
+}
+
+footer {
+  height: 45px;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin-top: auto;
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-top: 100px; */
 }
 
 .books {
@@ -41,11 +73,11 @@ main {
   display: grid;
   grid-template-columns: 90px 120px 90px;
   align-items: center;
-  background-color: grey;
+  background-color: var(--book-card-color);
 }
 @media screen and (min-width: 1122px) {
   .books {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -66,20 +98,6 @@ main {
   align-items: center;
 }
 
-button.delete,
-button.change_status {
-  height: 40px;
-  width: 60px;
-  margin-bottom: 10px;
-}
-button.delete {
-  background-color: red;
-  color: white;
-}
-button.change_status {
-  background-color: #fab06b;
-}
-
 div.form {
   position: absolute;
   top: 0;
@@ -93,11 +111,12 @@ div.form {
 }
 
 .book_form {
-  background-color: #9ba3ff;
+  background-color: var(--bg-color);
   border: 2px solid black;
   padding: 10px;
   font-size: 20px;
   width: 80%;
+  max-width: 500px;
   height: 350px;
 }
 
@@ -107,32 +126,6 @@ input[type="text"] {
   margin-bottom: 10px;
   display: block;
   height: 30px;
-}
-
-button.add {
-  margin-bottom: 35px;
-  background-color: #fab06b;
-  width: 100px;
-  height: 50px;
-  padding: 10px;
-}
-.book_buttons {
-  display: flex;
-  justify-content: space-between;
-}
-.book_submit {
-  background-color: #fffd9b;
-  width: 90px;
-  height: 50px;
-}
-.book_cancel {
-  background-color: #ff9b9e;
-  width: 90px;
-  height: 50px;
-}
-button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
 }
 
 ul {
@@ -147,6 +140,48 @@ li {
   padding-left: 10px;
 }
 #status {
-  color: green;
+  color: #7acccc;
   font-weight: bold;
+}
+
+/* Buttons */
+
+button.delete,
+button.change_status {
+  height: 40px;
+  width: 60px;
+  margin-bottom: 10px;
+}
+button.delete {
+  background-color: var(--cancel-btns);
+  color: white;
+}
+button.change_status {
+  background-color: var(--submit-btns);
+}
+
+button.add {
+  margin-bottom: 35px;
+  background-color: var(--submit-btns);
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+}
+.book_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.book_submit {
+  background-color: var(--submit-btns);
+  width: 90px;
+  height: 50px;
+}
+.book_cancel {
+  background-color: var(--cancel-btns);
+  width: 90px;
+  height: 50px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
